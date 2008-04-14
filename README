@@ -4,8 +4,8 @@ Perl script to create man pages from program --help
 and --version output.
 
 Runtime requirements:
-  perl-5.8.8-4
-  perl-Locale-gettext-1.05-1
+  perl-5.10.0-3
+  perl-Locale-gettext-1.05-3
 
 Canonical homepage:
   http://www.gnu.org/software/help2man/
@@ -16,15 +16,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack help2man-1.36.4-1-src.tar.bz2
+  unpack help2man-1.36.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./help2man-1.36.4-1.cygport all
+  cygport ./help2man-1.36.4-X.cygport all
 
 This will create:
-  /usr/src/help2man-1.36.4-1-src.tar.bz2
-  /usr/src/help2man-1.36.4-1.tar.bz2
+  /usr/src/help2man-1.36.4-X-src.tar.bz2
+  /usr/src/help2man-1.36.4-X.tar.bz2
 
 -------------------------------------------
 
@@ -53,6 +53,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.36.4-2 -----
+Rebuilt for perl-5.10.
 
 ----- version 1.36.4-1 -----
 Version bump.
