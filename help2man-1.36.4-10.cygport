@@ -3,13 +3,7 @@ HOMEPAGE="http://www.gnu.org/software/help2man/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
          mirror://gnu/${PN}/${P}.tar.gz.sig"
 
-src_compile() {
-	cd ${S}
-	cygautoreconf
-	cd ${B}
-	cygconf --disable-nls
-	cygmake
-}
+CYGCONF_ARGS="--disable-nls"
 
 src_install() {
 	cd ${B}
