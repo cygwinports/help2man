@@ -1,0 +1,13 @@
+--- origsrc/help2man-1.39.1/bindtextdomain.c	2009-11-13 00:01:34.000000000 -0600
++++ src/help2man-1.39.1/bindtextdomain.c	2011-03-04 02:02:35.251461300 -0600
+@@ -33,6 +33,10 @@ void setup()
+     if (done++)
+         return;
+ 
++#ifdef __CYGWIN__
++    void *RTLD_NEXT = dlopen("cygintl-8.dll", RTLD_LAZY);
++#endif
++
+     if (!(e_textdomain = getenv("TEXTDOMAIN")))
+ 	die("TEXTDOMAIN not set");
+ 
