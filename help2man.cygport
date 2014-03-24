@@ -1,5 +1,5 @@
 NAME="help2man"
-VERSION=1.41.1
+VERSION=1.44.1
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Creates man pages from program output"
@@ -7,8 +7,8 @@ DESCRIPTION="Perl script that automatically creates man pages from the output
 from a program's --help and --version options."
 REQUIRES="libintl8"  # dlopen()ed by LD_PRELOAD hack
 HOMEPAGE="http://www.gnu.org/software/help2man/"
-SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
-         mirror://gnu/${PN}/${P}.tar.gz.sig"
+SRC_URI="mirror://gnu/help2man/${NAME}-${VERSION}.tar.xz
+         mirror://gnu/help2man/${NAME}-${VERSION}.tar.xz.sig"
 PATCH_URI="1.40.4-cygwin-nls.patch"
 
 # Force l10n to be rebuilt during test
