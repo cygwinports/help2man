@@ -1,5 +1,5 @@
 NAME="help2man"
-VERSION=1.44.1
+VERSION=1.47.3
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Creates man pages from program output"

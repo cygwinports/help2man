@@ -19,15 +19,15 @@ that we're trying to help2man).
 +	$(INSTALL_PROGRAM) lib/cygintl-8.dll $(DESTDIR)$(pkglibdir)
 +	ln -sf cygintl-8.dll $(DESTDIR)$(pkglibdir)/$(preload).so
  
- install_l10n: install_dirs msg_l10n man_l10n
- 	for lang in $(LINGUAS); \
+ install_l10n: install_dirs msg_l10n man_l10n info_l10n
+ 	set -e; \
 @@ -113,7 +114,9 @@ $(target).h2m: $(srcdir)/$(target).h2m.P
  
  preload: $(preload).so
  $(preload).so: $(srcdir)/$(preload).c
--	$(CC) $(CFLAGS) -o $@ -fPIC -shared $? $(LIBS)
+-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ -fPIC -shared $? $(LIBS)
 +	mkdir -p lib
-+	$(CC) $(CFLAGS) -o lib/cygintl-8.dll -shared $? $(LIBS)
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o lib/cygintl-8.dll -shared $? $(LIBS)
 +	ln -sf lib/cygintl-8.dll $@
  
  man: $(target).1
